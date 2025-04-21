@@ -1,0 +1,16 @@
+name = "build-logs"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = [ "nodejs_compat" ]
+
+routes = [
+  { pattern = "build.apeiria.net", custom_domain = true }
+]
+
+[vars]
+FRONTEND_PREFIX = "https://raw.githubusercontent.com/Misaka13514-AUR/build-logs/refs/heads/master/"
+LOG_PREFIX = "https://aur.apeiria.net/log/"
+
+[[hyperdrive]]
+binding = "HYPERDRIVE"
+id = "241095a945de40dcb3f882d7f711de6e"
