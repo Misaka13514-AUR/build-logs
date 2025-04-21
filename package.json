@@ -1,0 +1,32 @@
+{
+  "name": "build-logs",
+  "version": "1.0.0",
+  "description": "Making build logs from lilac public using Cloudflare Workers",
+  "homepage": "https://github.com/Misaka13514-AUR/build-logs",
+  "bugs": {
+    "url": "https://github.com/Misaka13514-AUR/build-logs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Misaka13514-AUR/build-logs.git"
+  },
+  "license": "",
+  "author": "Misaka13514",
+  "main": "src/index.ts",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev",
+    "generate-types": "wrangler types",
+    "type-check": "generate-types && tsc"
+  },
+  "dependencies": {
+    "ansi-to-html": "^0.7.2",
+    "postgres": "^3.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "typescript": "^5.5.2",
+    "wrangler": "^4.12.0"
+  }
+}
