@@ -37,7 +37,7 @@
         $('#l').DataTable({
             "searchDelay": 100,
             "iDisplayLength": 100,
-            "aLengthMenu": [[100, 250, 500, 1000, -1], [100, 250, 500, 1000, "所有"]],
+            "aLengthMenu": [[100, 250, 500, 1000, -1], [100, 250, 500, 1000, "All"]],
             "ajax": {
                 url: url,
                 dataSrc: ""
@@ -46,12 +46,12 @@
             "columnDefs": [
                 {
                     targets: 0,
-                    title: "包名",
+                    title: "Package Name",
                     data: "pkgbase"
                 },
                 {
                     targets: 1,
-                    title: "打包者",
+                    title: "Maintainer",
                     data: "maintainer",
                     render: function (data, type, row, meta) {
                         const d = JSON.parse(data)
@@ -60,12 +60,12 @@
                 },
                 {
                     targets: 2,
-                    title: "版本号",
+                    title: "Version",
                     data: "pkg_version"
                 },
                 {
                     targets: 3,
-                    title: "状态",
+                    title: "Status",
                     data: "result",
                     render: function (data, type, row, meta) {
                         switch (data) {
@@ -82,17 +82,17 @@
                 },
                 {
                     targets: 4,
-                    title: "持续时间（秒）",
+                    title: "Elapsed (s)",
                     data: "elapsed"
                 },
                 {
                     targets: 5,
-                    title: "CPU 使用率（%）",
+                    title: "CPU Usage (%)",
                     data: "cpu"
                 },
                 {
                     targets: 6,
-                    title: "内存使用（GiB）",
+                    title: "Memory Usage (GiB)",
                     data: "memory",
                     render: function (data, type, row, meta) {
                         return data.toFixed(3)
@@ -100,7 +100,7 @@
                 },
                 {
                     targets: 7,
-                    title: "打包时间",
+                    title: "Build Time",
                     data: "ts",
                     render: function (data, type, row, meta) {
                         if (type == 'display') {
@@ -120,18 +120,18 @@
                 },
                 {
                     targets: 9,
-                    title: "日志",
+                    title: "Log",
                     data: "ts",
                     render: function (data, type, row, meta) {
-                        return `<a href=/imlonghao-api/pkg/${row.pkgbase}/log/${Math.floor(data / 1000)} target=_blank rel=noopener>日志</a>`
+                        return `<a href=/imlonghao-api/pkg/${row.pkgbase}/log/${Math.floor(data / 1000)} target=_blank rel=noopener>Log</a>`
                     }
                 },
                 {
                     targets: 10,
-                    title: "更多",
+                    title: "More",
                     data: "pkgbase",
                     render: function (data, type, row, meta) {
-                        return `<a href=#${data}>更多</a>`
+                        return `<a href=#${data}>More</a>`
                     }
                 }
             ]
