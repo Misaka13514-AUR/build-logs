@@ -112,6 +112,14 @@
                 },
                 {
                     targets: 8,
+                    title: "AUR",
+                    data: "pkgbase",
+                    render: function (data, type, row, meta) {
+                        return `<a href=https://aur.archlinux.org/packages/${data} target=_blank rel=noopener>AUR</a>`
+                    }
+                },
+                {
+                    targets: 9,
                     title: "GitHub",
                     data: "pkgbase",
                     render: function (data, type, row, meta) {
@@ -119,7 +127,7 @@
                     }
                 },
                 {
-                    targets: 9,
+                    targets: 10,
                     title: "Log",
                     data: "ts",
                     render: function (data, type, row, meta) {
@@ -127,7 +135,7 @@
                     }
                 },
                 {
-                    targets: 10,
+                    targets: 11,
                     title: "More",
                     data: "pkgbase",
                     render: function (data, type, row, meta) {
