@@ -82,8 +82,26 @@
                 },
                 {
                     targets: 4,
-                    title: "Elapsed (s)",
-                    data: "elapsed"
+                    title: "Elapsed",
+                    data: "elapsed",
+                    render: function (data, type, row, meta) {
+                        if (type === 'display') {
+                            const totalSeconds = parseInt(data);
+                            const hours = Math.floor(totalSeconds / 3600);
+                            const minutes = Math.floor((totalSeconds % 3600) / 60);
+                            const seconds = totalSeconds % 60;
+                            
+                            if (hours > 0) {
+                                return `${hours}h ${minutes}m ${seconds}s`;
+                            } else if (minutes > 0) {
+                                return `${minutes}m ${seconds}s`;
+                            } else {
+                                return `${seconds}s`;
+                            }
+                        } else {
+                            return data;
+                        }
+                    }
                 },
                 {
                     targets: 5,
